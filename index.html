@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USB Connection Test</title>
+  </head>
+  <script type="module" src="dist/index.esm.js"></script>
+  <body>
+    <h1>USB Connection Test</h1>
+    <button id="connect-button">Connect USB Device</button>
+    <script type="module">
+      import { UsbModemService } from './dist/index.esm.js';
+      const usbModemService = new UsbModemService();
+      document
+        .getElementById('connect-button')
+        .addEventListener('click', () => {
+          const vendorId = 0x12d1;
+          const productId = 0x1f01;
+          usbModemService.requestModem(vendorId, productId);
+        });
+    </script>
+  </body>
+</html>
