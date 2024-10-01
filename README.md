@@ -19,8 +19,4 @@ npm run build
 
 ### Running the Project
 
-Open the index.html file in your browser or use a static server:
-
-```
-npx serve dist
-```
+Open the index.html file in your browser using Live Server
